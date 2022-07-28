@@ -4,7 +4,7 @@ import edu.princeton.cs.algs4.StdOut;
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 
-public class Deque<Item> implements Iterable<Item> {
+public class Dequeue<Item> implements Iterable<Item> {
     private class Node {
         Item item;
         Node next;
@@ -18,9 +18,6 @@ public class Deque<Item> implements Iterable<Item> {
     private Node head;
     private Node tail;
     private int count = 0;
-
-    public Deque() {
-    }
 
     // is the deque empty?
     public boolean isEmpty() {
@@ -126,14 +123,14 @@ public class Deque<Item> implements Iterable<Item> {
 
     // unit testing (required)
     public static void main(String[] args) {
-        Deque<String> deque = new Deque<>();
+        Dequeue<String> dequeue = new Dequeue<String>();
         while (!StdIn.isEmpty()) {
             String s = StdIn.readString();
             if (s.equals("-")) {
-                StdOut.print(deque.removeLast());
+                StdOut.print(dequeue.removeLast());
             }
             else {
-                deque.addFirst(s);
+                dequeue.addFirst(s);
             }
         }
     }
